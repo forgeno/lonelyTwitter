@@ -3,6 +3,7 @@ package ca.ualberta.cs.lonelytwitter;
 
 import android.provider.ContactsContract;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -12,6 +13,7 @@ import java.util.Date;
 public abstract class Tweet implements Tweetable{
         private Date date;
         private String message;
+        private ArrayList<Moods> moodList;
         //private String hiddenString;
 
         public Tweet(Date date, String message) throws TweetTooLongException {
@@ -43,5 +45,9 @@ public abstract class Tweet implements Tweetable{
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public void addMood(Moods mood){
+        moodList.add(mood);
     }
 }
